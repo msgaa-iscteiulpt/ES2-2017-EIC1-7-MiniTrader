@@ -27,6 +27,13 @@ import mt.filter.AnalyticsFilter;
  * @author Group 78
  *
  */
+
+
+
+//This is the EUROPEserver
+
+
+
 public class MicroServer implements MicroTraderServer {
 	
 	public static void main(String[] args) {
