@@ -30,7 +30,7 @@ import mt.filter.AnalyticsFilter;
 
 
 
-//This is the EUROPEserver
+//This is the ASIAserver
 
 
 
