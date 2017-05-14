@@ -29,9 +29,7 @@ import mt.filter.AnalyticsFilter;
  */
 
 
-
-//This is the EUROPEserver
-
+//This is the US server
 
 
 public class MicroServer implements MicroTraderServer {
@@ -92,7 +90,8 @@ public class MicroServer implements MicroTraderServer {
 				serverComm.sendError(null, "Type was not recognized");
 				continue;
 			}
-
+			
+			
 			switch (type) {
 				case CONNECTED:
 					try{
@@ -106,6 +105,15 @@ public class MicroServer implements MicroTraderServer {
 					break;
 				case NEW_ORDER:
 					try {
+						
+						
+						//Business Rule 3
+						if(msg.getOrder().getNumberOfUnits() < 10)
+							throw new ServerException("Order need more than 10 units, or 10 units");
+						
+						
+						
+						
 						verifyUserConnected(msg);
 						if(msg.getOrder().getServerOrderID() == EMPTY){
 							msg.getOrder().setServerOrderID(id++);
