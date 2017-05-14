@@ -29,7 +29,7 @@ import mt.filter.AnalyticsFilter;
  */
 
 
-//This is the US server
+//This is the EU server
 
 
 public class MicroServer implements MicroTraderServer {
