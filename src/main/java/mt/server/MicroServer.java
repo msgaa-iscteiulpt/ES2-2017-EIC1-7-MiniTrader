@@ -105,21 +105,18 @@ public class MicroServer implements MicroTraderServer {
 					break;
 				case NEW_ORDER:
 					try {
-						
-						
+				
 						//Business Rule 3
-						if(msg.getOrder().getNumberOfUnits() < 10)
-							throw new ServerException("Order need more than 10 units, or 10 units");
+						if(msg.getOrder().getNumberOfUnits() >= 10) {
 						
-						
-						
-						
-						verifyUserConnected(msg);
-						if(msg.getOrder().getServerOrderID() == EMPTY){
-							msg.getOrder().setServerOrderID(id++);
+							verifyUserConnected(msg);
+							if(msg.getOrder().getServerOrderID() == EMPTY){
+								msg.getOrder().setServerOrderID(id++);
+							}
+							notifyAllClients(msg.getOrder());
+							processNewOrder(msg);
+							
 						}
-						notifyAllClients(msg.getOrder());
-						processNewOrder(msg);
 					} catch (ServerException e) {
 						serverComm.sendError(msg.getSenderNickname(), e.getMessage());
 					}
