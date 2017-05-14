@@ -88,7 +88,7 @@ public class MicroServer implements MicroTraderServer {
 		while ((msg = serverComm.getNextMessage()) != null) {
 			ServerSideMessage.Type type = msg.getType();
 			
-			if(type == null){
+			if(type == null){ 
 				serverComm.sendError(null, "Type was not recognized");
 				continue;
 			}
