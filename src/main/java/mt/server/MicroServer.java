@@ -280,7 +280,7 @@ public class MicroServer implements MicroTraderServer {
 		
 		for (Entry<String, Set<Order>> entry : orderMap.entrySet()) {
 			for (Order o : entry.getValue()) {
-				if (o.isBuyOrder() && o.getStock().equals(sellOrder.getStock()) && o.getPricePerUnit() >= sellOrder.getPricePerUnit()) {
+				if (o.isBuyOrder() && o.getStock().equals(sellOrder.getStock()) && o.getPricePerUnit() >= sellOrder.getPricePerUnit() && !sellOrder.getNickname().equals(o.getNickname())) {
 					doTransaction (o, sellOrder);
 				}
 			}
@@ -299,7 +299,7 @@ public class MicroServer implements MicroTraderServer {
 
 		for (Entry<String, Set<Order>> entry : orderMap.entrySet()) {
 			for (Order o : entry.getValue()) {
-				if (o.isSellOrder() && buyOrder.getStock().equals(o.getStock()) && o.getPricePerUnit() <= buyOrder.getPricePerUnit()) {
+				if (o.isSellOrder() && buyOrder.getStock().equals(o.getStock()) && o.getPricePerUnit() <= buyOrder.getPricePerUnit() && !buyOrder.getNickname().equals(o.getNickname())) {
 					doTransaction(buyOrder, o);
 				}
 			}
