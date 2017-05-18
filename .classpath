@@ -33,6 +33,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/vasco/Downloads/mockito-all-1.10.19.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/xstream-1.4.9.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/xmlpull-1.1.3.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
