@@ -1,5 +1,11 @@
+
 package mt.server;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,6 +18,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.thoughtworks.xstream.XStream;
 
 import mt.Order;
 import mt.comm.ServerComm;
@@ -34,7 +42,28 @@ import mt.filter.AnalyticsFilter;
 
 public class MicroServer implements MicroTraderServer {
 	
+		static class USTransaction {
+		private String stock;
+		private int numberOfUnits;
+		private double pricePerUnit;
+
+		protected USTransaction(String stock, int numberOfUnits, double pricePerUnit) {
+			this.stock = stock;
+			this.numberOfUnits = numberOfUnits;
+			this.pricePerUnit = pricePerUnit;
+		}
+		
+		}
+	/**
+	 * XML writer
+	 **/
+	private static XStream xstream;
+		
+		
 	public static void main(String[] args) {
+		xstream = new XStream();
+		xstream.omitField(MicroServer.class, "outer-class");
+		xstream.alias("transaction", USTransaction.class);
 		ServerComm serverComm = new AnalyticsFilter(new ServerCommImpl());
 		MicroTraderServer server = new MicroServer();
 		server.start(serverComm);
@@ -327,15 +356,34 @@ public class MicroServer implements MicroTraderServer {
 	 */
 	private void doTransaction(Order buyOrder, Order sellerOrder) {
 		LOGGER.log(Level.INFO, "Processing transaction between seller and buyer...");
+		
+		int unitsSold;
 
 		if (buyOrder.getNumberOfUnits() >= sellerOrder.getNumberOfUnits()) {
+			unitsSold = sellerOrder.getNumberOfUnits();
 			buyOrder.setNumberOfUnits(buyOrder.getNumberOfUnits()
 					- sellerOrder.getNumberOfUnits());
 			sellerOrder.setNumberOfUnits(EMPTY);
 		} else {
+			unitsSold = buyOrder.getNumberOfUnits();
 			sellerOrder.setNumberOfUnits(sellerOrder.getNumberOfUnits()
 					- buyOrder.getNumberOfUnits());
 			buyOrder.setNumberOfUnits(EMPTY);
+		}
+		
+		//Functional Requirement 1 (FR1)
+		USTransaction transaction = new USTransaction(buyOrder.getStock(), unitsSold,
+				buyOrder.getPricePerUnit());
+		String xml = xstream.toXML(transaction);
+		System.out.println(xml);
+		File file = new File("src/main/resources/log.xml");
+		try (FileWriter fw = new FileWriter(file, true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter out = new PrintWriter(bw)) {
+			out.println(xml + "\n");
+			out.close();
+		} catch (IOException e) {
+			
 		}
 		
 		updatedOrders.add(buyOrder);
