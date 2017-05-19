@@ -105,11 +105,13 @@ public class MicroServer implements MicroTraderServer {
 					break;
 				case NEW_ORDER:
 					try {
+						verifyUserConnected(msg);
+
 						//Business Rule 2
 						int numeroOrdensVenda = 0;
 						if (msg.getOrder().isSellOrder()) {
 							Set<Order> ordens = orderMap.get(msg.getOrder().getNickname());
-							
+
 							for (Order order: ordens) {
 								if (order.isSellOrder())
 									numeroOrdensVenda++;
@@ -119,7 +121,6 @@ public class MicroServer implements MicroTraderServer {
 						//Business Rule 3 and Business Rule 2
 						if(msg.getOrder().getNumberOfUnits() >= 10 && numeroOrdensVenda < 5) {
 							
-							verifyUserConnected(msg);
 							if(msg.getOrder().getServerOrderID() == EMPTY){
 								msg.getOrder().setServerOrderID(id++);
 							}
