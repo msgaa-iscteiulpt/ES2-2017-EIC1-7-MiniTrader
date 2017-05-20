@@ -1,19 +1,33 @@
 # ESII2017MiniTrader
-Simple Marven Project
+Simple Maven Project
 
-(i)
 
-Group 7
+EIC1, Group 7
 
-(ii)
 
-Diogo Guerreiro - 68914 - dacgo
+Link video MiniTrader-AS
 
-Miguel Almeida - 68718 - msgaa
 
-Nélson Castro - 68765 - nfemc
+Link video MiniTrader-US
 
-Vasco Costa - 68730 - vfaac
 
-Link to the video
+Link video MiniTrader-EU
+
+
+
+
+Link video Jenkins
 https://www.youtube.com/watch?v=p_il3qTR-Oo
+
+
+
+Trabalho Concluído
+
+
+68914, Diogo Guerreiro, dacgo@iscte-iul.pt
+
+68718, Miguel Almeida, msgaa@iscte-iul.pt
+
+68765, Nelson Castro, nfemc@iscte-iul.pt
+
+68730, Vasco Costa, vfaac@iscte-iul.pt
