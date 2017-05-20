@@ -1,2 +1,68 @@
 
 
+<transaction>
+  <stock>aaaa</stock>
+  <numberOfUnits>111</numberOfUnits>
+  <pricePerUnit>1.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>aaaa</stock>
+  <numberOfUnits>111</numberOfUnits>
+  <pricePerUnit>111.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>MSFT</stock>
+  <numberOfUnits>15</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>ISCTE</stock>
+  <numberOfUnits>10</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>MSFT</stock>
+  <numberOfUnits>15</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>MSFT</stock>
+  <numberOfUnits>15</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>ISCTE</stock>
+  <numberOfUnits>10</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>MSFT</stock>
+  <numberOfUnits>15</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>MSFT</stock>
+  <numberOfUnits>15</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>ISCTE</stock>
+  <numberOfUnits>10</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
+<transaction>
+  <stock>MSFT</stock>
+  <numberOfUnits>15</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+</transaction>
+
