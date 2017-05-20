@@ -99,6 +99,9 @@ public class MicroServer implements MicroTraderServer {
 		LOGGER.log(Level.INFO, "Creating the server...");
 		orderMap = new HashMap<String, Set<Order>>();
 		updatedOrders = new HashSet<>();
+		xstream = new XStream();
+		xstream.omitField(MicroServer.class, "outer-class");
+		xstream.alias("transaction", ASTransaction.class);
 	}
 
 	@Override
@@ -131,11 +134,11 @@ public class MicroServer implements MicroTraderServer {
 				break;
 			case NEW_ORDER:
 				try {
+					verifyUserConnected(msg);
 
 					// Business Rule 3
 					if (msg.getOrder().getNumberOfUnits() >= 10) {
 
-						verifyUserConnected(msg);
 						if (msg.getOrder().getServerOrderID() == EMPTY) {
 							msg.getOrder().setServerOrderID(id++);
 						}

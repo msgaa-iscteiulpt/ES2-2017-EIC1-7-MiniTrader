@@ -1,0 +1,40 @@
+<transaction>
+  <stock>ISCTE</stock>
+  <numberOfUnits>10</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+  <buyer>userB</buyer>
+  <seller>userA</seller>
+</transaction>
+
+<transaction>
+  <stock>ISCTE</stock>
+  <numberOfUnits>10</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+  <buyer>userB</buyer>
+  <seller>userA</seller>
+</transaction>
+
+<transaction>
+  <stock>MSFT</stock>
+  <numberOfUnits>15</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+  <buyer>userB</buyer>
+  <seller>userA</seller>
+</transaction>
+
+<transaction>
+  <stock>ISCTE</stock>
+  <numberOfUnits>10</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+  <buyer>userB</buyer>
+  <seller>userA</seller>
+</transaction>
+
+<transaction>
+  <stock>MSFT</stock>
+  <numberOfUnits>15</numberOfUnits>
+  <pricePerUnit>21.0</pricePerUnit>
+  <buyer>userB</buyer>
+  <seller>userA</seller>
+</transaction>
+
