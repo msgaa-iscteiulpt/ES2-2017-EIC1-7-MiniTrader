@@ -5,23 +5,15 @@ Simple Maven Project
 EIC1, Group 7
 
 
-Link video MiniTrader-AS
-
-
-Link video MiniTrader-US
-
-
-Link video MiniTrader-EU
-
-
+Link video MiniTrader-AS,US & EU
+https://www.youtube.com/watch?v=Qpre_E5X_vk
 
 
 Link video Jenkins
 https://www.youtube.com/watch?v=p_il3qTR-Oo
 
 
-
-Trabalho Concluído
+Trabalho Concluido
 
 
 68914, Diogo Guerreiro, dacgo@iscte-iul.pt
