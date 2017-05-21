@@ -372,7 +372,7 @@ public class MicroServer implements MicroTraderServer {
 				buyOrder.getPricePerUnit(), buyOrder.getNickname(), sellerOrder.getNickname());
 		String xml = xstream.toXML(transaction);
 		System.out.println(xml);
-		File file = new File("src/main/resources/log.xml");
+		File file = new File("log.xml");
 		try (FileWriter fw = new FileWriter(file, true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw)) {
